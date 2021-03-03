@@ -1,5 +1,5 @@
 {
-    "name": "vitorccs/bradesco-api-php",
+    "name": "fernandocvargas/bradesco-api-php",
     "description": "SDK PHP para a API de Registro de Boletos do Bradesco",
     "keywords": [
         "bradesco",
