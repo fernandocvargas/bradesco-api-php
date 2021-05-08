@@ -1,4 +1,5 @@
 <?php
+
 namespace BradescoApi\Http;
 
 use BradescoApi\Exceptions\BradescoParameterException;
@@ -11,7 +12,6 @@ class Bradesco
     const CERT_PASSWORD           = 'BRADESCO_CERT_PASSWORD';
     const FOLDER_PATH             = 'BRADESCO_FOLDER_PATH';
 
-    private static $apiUrl        = null;
     private static $sandbox       = null;
     private static $timeout       = null;
     private static $certPath      = null;
@@ -22,9 +22,9 @@ class Bradesco
     private static $defTimeout    = 30;
     private static $defFolderPath = '';
 
-    private static $baseUri       = 'https://cobranca.bradesconetempresa.b.br/ibpjregistrotitulows/';
-    private static $sandboxUrl    = 'https://cobranca.bradesconetempresa.b.br/ibpjregistrotitulows/registrotitulohomologacao';
-    private static $productionUrl = 'https://cobranca.bradesconetempresa.b.br/ibpjregistrotitulows/registrotitulo';
+    private static $apiUrl        = 'https://cobranca.bradesconetempresa.b.br/ibpjregistrotitulows/';
+    private static $sandboxUrl    = 'registrotitulohomologacao';
+    private static $productionUrl = 'registrotitulo';
     private static $sdkVersion    = "1.3.4";
 
     public static function setParams(array $params)
@@ -76,21 +76,13 @@ class Bradesco
         return static::$sandbox;
     }
 
-    public static function setApiUrl(string $url = null)
+    public static function getEndPoint()
     {
-        static::$apiUrl = $url;
-
-        if (static::$apiUrl === null) {
-            static::$apiUrl = static::isSandbox() ? static::$sandboxUrl : static::$productionUrl;
-        }
+        return static::isSandbox() ? static::$sandboxUrl : static::$productionUrl;
     }
 
     public static function getApiUrl()
     {
-        if (static::$apiUrl === null) {
-            static::setApiUrl();
-        }
-
         return static::$apiUrl;
     }
 
@@ -144,11 +136,6 @@ class Bradesco
         if (static::$certPassword === false) {
             throw new BradescoParameterException("Missing required parameter 'CERT_PASSWORD'");
         }
-    }
-
-    public static function getBaseUri()
-    {
-        return static::$baseUri;
     }
 
     public static function getTimeout()

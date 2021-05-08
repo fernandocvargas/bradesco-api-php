@@ -19,9 +19,9 @@ abstract class Resource
         return static::$api;
     }
 
-    public static function create(array $params, string $endpoint = null)
+    public static function create(array $params)
     {
-        $data = static::api()->post($params, $endpoint);
+        $data = static::api()->post($params);
 
         return $data;
     }
