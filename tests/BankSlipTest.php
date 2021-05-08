@@ -69,7 +69,6 @@ class BankSlipTest extends TestCase
      */
     public function it_should_get_request_exception()
     {
-        Bradesco::setApiUrl('https://cobranca.bradesconetempresa.b.br/INVALID');
         BankSlip::reconfig();
 
         $bankSlip = BankSlip::create($this->data);

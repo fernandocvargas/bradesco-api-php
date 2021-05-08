@@ -1,4 +1,5 @@
 <?php
+
 namespace BradescoApi;
 
 use BradescoApi\Http\Resource;

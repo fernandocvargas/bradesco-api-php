@@ -1,4 +1,5 @@
 <?php
+
 namespace BradescoApi\Http;
 
 use GuzzleHttp\Client as Guzzle;
@@ -14,7 +15,6 @@ class Client extends Guzzle
     public function __construct(array $config = [])
     {
         $this->setCertKeys();
-
         $this->setConfig($config);
 
         parent::__construct($config);

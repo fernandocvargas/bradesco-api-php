@@ -16,18 +16,19 @@ class Api
         $this->client = new Client();
     }
 
-    public function post(array $params = [], string $endpoint = null)
+    public function post(array $params = [])
     {
         $options = [
             'body' => $this->encryptBodyData($params)
         ];
 
-        return $this->request('POST', $endpoint, $options);
+        return $this->request('POST', $options);
     }
 
-    private function request(string $method, string $endpoint = null, array $options = [])
+    private function request(string $method, array $options = [])
     {
         try {
+            $endpoint = Bradesco::getEndPoint();
             $response = $this->client->request($method, $endpoint, $options);
         } catch (RequestException $e) {
             if (!$e->hasResponse()) {
