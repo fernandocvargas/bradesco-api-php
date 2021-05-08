@@ -5,7 +5,7 @@ SDK PHP para a API de Registro On-line de Boletos de Cobrança Bradesco
 ## Descrição
 SDK em PHP para integração com os serviços de Registro On-line de Boletos de Cobrança Bradesco
 
-[Manual Registro de Boleto Bancario Online Dez17.pdf](https://github.com/vitorccs/bradesco-api-php/files/2332693/Manual_Registro_de_Boleto_Bancario_Online_Dez17.pdf)
+[Manual Registro de Boleto Bancario Online Dez17.pdf](https://drive.google.com/file/d/1ybt1Z-C58qoigKe_Ik96h-WDKXOfDjIw/view?usp=sharing)
 
 
 
