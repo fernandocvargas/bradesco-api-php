@@ -13,7 +13,7 @@ class Api
 
     public function __construct()
     {
-        $this->client = new Client();
+        $this->client = new Client(['base_uri' => \BradescoApi\Http\Bradesco::getBaseUri()]);
     }
 
     public function post(array $params = [], string $endpoint = null)

@@ -22,6 +22,7 @@ class Bradesco
     private static $defTimeout    = 30;
     private static $defFolderPath = '';
 
+    private static $baseUri       = 'https://cobranca.bradesconetempresa.b.br/ibpjregistrotitulows/';
     private static $sandboxUrl    = 'https://cobranca.bradesconetempresa.b.br/ibpjregistrotitulows/registrotitulohomologacao';
     private static $productionUrl = 'https://cobranca.bradesconetempresa.b.br/ibpjregistrotitulows/registrotitulo';
     private static $sdkVersion    = "1.3.4";
@@ -143,6 +144,11 @@ class Bradesco
         if (static::$certPassword === false) {
             throw new BradescoParameterException("Missing required parameter 'CERT_PASSWORD'");
         }
+    }
+
+    public static function getBaseUri()
+    {
+        return static::$baseUri;
     }
 
     public static function getTimeout()
