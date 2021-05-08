@@ -12,7 +12,7 @@ SDK em PHP para integração com os serviços de Registro On-line de Boletos de 
 ## Instalação
 Via Composer
 ```bash
-composer require vitorccs/bradesco-api-php
+composer require fernandcvargas/bradesco-api-php
 ```
 
 
