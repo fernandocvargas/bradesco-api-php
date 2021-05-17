@@ -55,12 +55,12 @@ class Bradesco
         static::$sandbox = $enable;
 
         if (static::$sandbox === null) {
-            static::$sandbox = getenv(static::SANDBOX);
-        }
-
-        if (static::$sandbox === false) {
             static::$sandbox = static::$defIsSandbox;
         }
+
+        // if (static::$sandbox === false) {
+        //     static::$sandbox = getenv(static::SANDBOX);
+        // }
 
         if (is_string(static::$sandbox)) {
             static::$sandbox = (static::$sandbox == 'false' ? false : true);
